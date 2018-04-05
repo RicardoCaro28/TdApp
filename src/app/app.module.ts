@@ -14,6 +14,17 @@ import { AngularFireModule } from 'angularfire2';
 
 import { FirebaseProvider } from '../providers/firebase/firebase';
 
+/// configuracion web de firebase
+var config = {
+  apiKey: "AIzaSyDx9DVCs7KJ0GbexQe5QwjSz2kjMyfA8Pk",
+  authDomain: "todoapp-53fc9.firebaseapp.com",
+  databaseURL: "https://todoapp-53fc9.firebaseio.com",
+  projectId: "todoapp-53fc9",
+  storageBucket: "todoapp-53fc9.appspot.com",
+  messagingSenderId: "113752067283"
+};
+
+
 @NgModule({
   declarations: [
     MyApp,
@@ -21,7 +32,10 @@ import { FirebaseProvider } from '../providers/firebase/firebase';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    HttpModule,
+    AngularFireDatabaseModule,
+    AngularFireModule.initializeApp(config)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
